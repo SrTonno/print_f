@@ -6,26 +6,21 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:11:56 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/07 19:57:40 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/08 20:13:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
-int	ft_X(long n, int count, char *base)
+int	ft_x(long n, int count, char *base)
 {
-	char	tmp;
-
-	if (0 > n)
+	if (n < 0)
 	{
 		n = n * -1;
 		count += write(1, "-", 1);
 	}
-	if (n > 9)
-	{
-		count += ft_X(n / 16, count, base);
-	}
-	tmp = (n % 16) + '0';
-	count += write(1, &base[tmp], 100);
+	if (n > 15)
+		count += ft_x(n / 16, count, base);
+	count += ft_putstr(base[n % 16]);
 	return (count);
 }

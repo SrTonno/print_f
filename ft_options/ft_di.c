@@ -6,11 +6,11 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:42:32 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/07 19:48:13 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/08 20:13:19 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 #include <stdio.h>
 
 static int	ft_putnbr(int n, int count)
@@ -25,25 +25,24 @@ static int	ft_putnbr(int n, int count)
 		if (0 > n)
 		{
 			n = n * -1;
-			count += write(1, "-", 1);
+			count += ft_putstr('-');
 		}
 		if (n > 9)
 		{
 			count += ft_putnbr(n / 10, count);
 		}
 		tmp = (n % 10) + '0';
-		count += write(1, &tmp, 1);
+		count += ft_putstr(tmp);
 	}
 	return (count);
 }
 
-int	ft_di(va_list PuntArg)
+int	ft_di(va_list arg)
 {
 	int	num;
-	int count;
+	int	count;
 
-	num = va_arg(PuntArg, int);
+	num = va_arg(arg, int);
 	count = ft_putnbr(num, 0);
 	return (count);
 }
-

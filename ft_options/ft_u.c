@@ -6,13 +6,11 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 19:04:12 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/07 19:48:27 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/08 20:14:13 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../libftprintf.h"
-#include <stdio.h>
+#include "../ft_printf.h"
 
 static int	ft_putnbr_un(unsigned int n, int count)
 {
@@ -22,24 +20,23 @@ static int	ft_putnbr_un(unsigned int n, int count)
 	if (0 > n)
 	{
 		n = n * -1;
-		count += write(1, "-", 1);
+		count += ft_putstr('-');
 	}
 	if (n > 9)
 	{
 		count += ft_putnbr_un(n / 10, count);
 	}
 	tmp = (n % 10) + '0';
-	count += write(1, &tmp, 1);
+	count += ft_putstr(tmp);
 	return (count);
 }
 
-int	ft_u(va_list PuntArg)
+int	ft_u(va_list arg)
 {
 	unsigned int	num;
-	int 			count;
+	int				count;
 
-	num = va_arg(PuntArg, unsigned int);
+	num = va_arg(arg, unsigned int);
 	count = ft_putnbr_un(num, 0);
 	return (count);
 }
-

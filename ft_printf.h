@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_savestruc.c                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 15:27:16 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/06 16:07:36 by tvillare         ###   ########.fr       */
+/*   Created: 2022/10/08 20:11:54 by tvillare          #+#    #+#             */
+/*   Updated: 2022/10/08 20:11:58 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <unistd.h>
+# include <limits.h>
+# include <stdlib.h>
+# include <stdarg.h>
 
-void	ft_savestruc(t_print *lst, const char str, char *flag, char format)
-{
-	lst->text = flag;
-	lst->format = format;
-	lst->flag = str;
-	//lst->next = NULL;
-}
+int	ft_printf(char const *str, ...);
+int	ft_selectoption(char letter, va_list arg);
+int	ft_c(va_list arg);
+int	ft_di(va_list arg);
+int	ft_u(va_list arg);
+int	ft_s(va_list arg);
+int	ft_x(long n, int count, char *base);
+int	ft_p(va_list arg);
+int	ft_putstr(char str);
+
+#endif
