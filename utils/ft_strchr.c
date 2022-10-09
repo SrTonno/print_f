@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_flag.c                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 17:36:11 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/05 18:24:17 by tvillare         ###   ########.fr       */
+/*   Created: 2022/09/15 15:01:10 by tvillare          #+#    #+#             */
+/*   Updated: 2022/10/09 14:41:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdio.h>
+#include "../ft_printf.h"
 
-int	ft_count_flag(const char *str)
+int	ft_strchr(const char *s, int c)
 {
 	int	i;
-	int	count;
 
 	i = 0;
-	count = 0;
-	while (str[i] != '\0')
+	while (s[i] != (unsigned char)c)
 	{
-		if (str[i] == '%' && str[i + 1] != '%')
-				count++;
-		else if (str[i] == '%' && str[i + 1] == '%' && str[i + 1] != '\0')
-			i++;
+		if (s[i] == '\0')
+			return (0);
 		i++;
 	}
-	return (count);
+	return (1);
 }
-/*
-int main()
-{
-	int i;
-	i = ft_count_flag("hola  adios  ppp %%");
-	printf("%d", i);
-}
-
-*/

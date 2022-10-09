@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:02:58 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:13:05 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:31:02 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	ft_put_longun(unsigned long long n, int count, char *base)
 {
-	if (n > 16)
+	if (n > 15)
 	{
 		count = ft_put_longun(n / 16, count, base);
-		n = n % 16;
+		//n = n % 16;
 	}
 	count += ft_putstr(base[n % 16]);
 	return (count);
@@ -30,6 +30,6 @@ int	ft_p(va_list arg)
 
 	count = write(1, "0x", 2);
 	value = va_arg(arg, unsigned long long);
-	count += ft_put_longun(value, count, "0123456789ABCDEF");
+	count = ft_put_longun(value, count, "0123456789abcdef");
 	return (count);
 }

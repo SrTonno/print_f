@@ -6,7 +6,7 @@
 #    By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 11:09:36 by tvillare          #+#    #+#              #
-#    Updated: 2022/10/05 17:46:47 by tvillare         ###   ########.fr        #
+#    Updated: 2022/10/09 14:50:19 by tvillare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,16 +14,17 @@
 #                                                       FILES                 #
 ###############################################################################
 CFILES		= \
-			ft_printf.c ft_countparam.c
+			ft_printf.c \
+			utils/ft_selectoption.c utils/ft_strchr.c utils/ft_putstr.c \
+			ft_options/ft_c.c ft_options/ft_di.c ft_options/ft_u.c \
+			ft_options/ft_s.c ft_options/ft_x.c ft_options/ft_p.c
 OBJS	=	${CFILES:.c=.o}
 
-#CBONUS = \
-#OBONUS	=	$(CBONUS:.c=.o)
 ###############################################################################
 #                                                   SETTINGS                  #
 ###############################################################################
 NAME = libftprintf.a
-HDRS = libftprintf.h
+HDRS = ft_printf.h
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
@@ -43,10 +44,7 @@ endif
 ###############################################################################
 all: ${NAME}
 
-#bonus :
-#	make WITH_BONUS=1
-
-$(NAME): $(TOTAL_OBJS)
+$(NAME):  $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 .c.o:
@@ -55,9 +53,6 @@ $(NAME): $(TOTAL_OBJS)
 ###############################################################################
 clean:
 		${RM} ${OBJS}
-
-#bclean: bclean
-#		${RM} ${OBONUS}
 
 fclean: clean
 		${RM} ${NAME}

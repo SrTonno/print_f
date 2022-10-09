@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:11:54 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:11:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/09 14:41:31 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_s(va_list arg);
 int	ft_x(long n, int count, char *base);
 int	ft_p(va_list arg);
 int	ft_putstr(char str);
+int	ft_strchr(const char *s, int c);
 
 #endif

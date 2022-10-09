@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:47:11 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:13:09 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:07:40 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,21 @@ int	ft_s(va_list arg)
 {
 	char	*str;
 	int		count;
+	int		i;
 
 	count = 0;
+	i = 0;
 	str = va_arg(arg, char *);
-	while (str[count] != '\0')
-		count += ft_putstr(str[count]);
+	if (!str)
+	{
+		count += write(1, "(null)", 6);
+		return(count);
+	}
+	while (str[i] != '\0')
+	{
+		count += ft_putstr(str[i]);
+		//count += write(1, &str[i], 1);
+		i++;
+	}
 	return (count);
 }
