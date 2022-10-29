@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:02:58 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/09 15:31:02 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/29 20:40:57 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 static int	ft_put_longun(unsigned long long n, int count, char *base)
 {
 	if (n > 15)
-	{
 		count = ft_put_longun(n / 16, count, base);
-		//n = n % 16;
-	}
 	count += ft_putstr(base[n % 16]);
 	return (count);
 }

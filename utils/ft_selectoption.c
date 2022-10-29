@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:37:27 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:12:46 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:18:40 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_selectoption(char letter, va_list arg)
 	else if (letter == 'u')
 		count += ft_u(arg);
 	else if (letter == 'X')
-		count += ft_x(va_arg(arg, long), 0, "0123456789ABCDEF");
+		count += ft_x(va_arg(arg, unsigned int), 0, "0123456789ABCDEF");
 	else if (letter == 'x')
-		count += ft_x(va_arg(arg, long), 0, "0123456789abcdef");
+		count += ft_x(va_arg(arg, unsigned int), 0, "0123456789abcdef");
 	else if (letter == '%')
 		count += write(1, "%", 1);
 	return (count);

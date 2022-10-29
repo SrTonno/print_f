@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:47:11 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/09 15:07:40 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/29 20:40:49 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,11 @@ int	ft_s(va_list arg)
 	if (!str)
 	{
 		count += write(1, "(null)", 6);
-		return(count);
+		return (count);
 	}
 	while (str[i] != '\0')
 	{
 		count += ft_putstr(str[i]);
-		//count += write(1, &str[i], 1);
 		i++;
 	}
 	return (count);

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_X.c                                             :+:      :+:    :+:   */
+/*   ft_x.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:11:56 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/09 15:35:45 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/20 17:14:13 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_x(long n, int count, char *base)
+int	ft_x(unsigned int n, int count, char *base)
 {
 	if (n < 0)
 	{
