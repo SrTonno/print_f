@@ -6,7 +6,7 @@
 #    By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 11:09:36 by tvillare          #+#    #+#              #
-#    Updated: 2022/10/09 14:50:19 by tvillare         ###   ########.fr        #
+#    Updated: 2022/10/31 15:26:05 by tvillare         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,12 +33,6 @@ AR = ar
 ARFLAGS = -rcs
 RM = rm -f
 
-ifdef WITH_BONUS
-	TOTAL_OBJS = $(OBJS) $(OBONUS)
-else
-	TOTAL_OBJS = $(OBJS)
-endif
-
 ###############################################################################
 #                                                         OPTIONS             #
 ###############################################################################
@@ -59,4 +53,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY = all clean fclean re bonus bclean
+.PHONY = all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 19:04:12 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:14:13 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:26:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@ static int	ft_putnbr_un(unsigned int n, int count)
 	char	tmp;
 
 	count = 0;
-	if (0 > n)
-	{
-		n = n * -1;
-		count += ft_putstr('-');
-	}
 	if (n > 9)
 	{
 		count += ft_putnbr_un(n / 10, count);

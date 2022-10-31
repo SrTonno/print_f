@@ -6,12 +6,11 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:42:32 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/08 20:13:19 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:26:35 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
-#include <stdio.h>
 
 static int	ft_putnbr(int n, int count)
 {
