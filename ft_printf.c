@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:14:52 by tvillare          #+#    #+#             */
-/*   Updated: 2022/10/29 20:46:33 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:15:49 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,4 @@ int	ft_printf(char const *str, ...)
 	va_end(arg);
 	return (count);
 }
+printf("hola%c", "a");
